@@ -1,0 +1,649 @@
+/* ========================================
+   Slide Base Styles - 2025/2026 Update
+   Shared across all slides
+   ======================================== */
+
+/* ========================================
+   Base Slide Container
+   ======================================== */
+
+.slide-base {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--surface-50, #FAFAF9) 0%,
+    #F0EEFF 50%,
+    var(--surface-100, #F5F5F4) 100%
+  );
+  overflow: hidden;
+}
+
+/* Decorative floating shapes - refined (slower, more elegant) */
+.slide-base::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.06) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: floatGentle 25s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.slide-base::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(219, 39, 119, 0.05) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: floatGentle 20s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+}
+
+/* ========================================
+   Slide Content Container
+   ======================================== */
+
+.slide-content {
+  max-width: 1400px;
+  width: 90%;
+  padding: var(--spacing-16, 4rem) var(--spacing-8, 2rem);
+  position: relative;
+  z-index: 10;
+  animation: contentFadeIn 0.6s ease-out;
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   Slide Header
+   ======================================== */
+
+.slide-header {
+  text-align: center;
+  margin-bottom: var(--spacing-16, 4rem);
+  position: relative;
+  animation: headerSlideIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes headerSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated underline - refined pulse */
+.slide-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--apollo-pink, #DB2777),
+    var(--apollo-purple, #7C3AED)
+  );
+  border-radius: var(--radius-full, 9999px);
+  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.3);
+  animation: underlinePulse 4s ease-in-out infinite;
+}
+
+@keyframes underlinePulse {
+  0%, 100% {
+    width: 80px;
+    opacity: 1;
+  }
+  50% {
+    width: 96px;
+    opacity: 0.9;
+  }
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+
+/* Hero Title - for opening slides */
+.slide-title-hero {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 900;
+  text-align: center;
+  margin: 0 0 var(--spacing-4, 1rem) 0;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--text-primary, #1C1917);
+}
+
+/* Standard Title */
+.slide-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 var(--spacing-4, 1rem) 0;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  background: linear-gradient(
+    135deg,
+    var(--apollo-pink, #DB2777) 0%,
+    var(--apollo-purple, #7C3AED) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 12px rgba(124, 58, 237, 0.12));
+  position: relative;
+  animation: titleGlow 5s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    filter: drop-shadow(0 4px 12px rgba(124, 58, 237, 0.12));
+  }
+  50% {
+    filter: drop-shadow(0 6px 20px rgba(124, 58, 237, 0.18));
+  }
+}
+
+/* Title color variants */
+.slide-title-pink {
+  background: linear-gradient(135deg, var(--apollo-pink, #DB2777) 0%, var(--apollo-pink-soft, #F472B6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.slide-title-purple {
+  background: linear-gradient(135deg, var(--apollo-purple, #7C3AED) 0%, var(--apollo-purple-soft, #A78BFA) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.slide-title-teal {
+  background: linear-gradient(135deg, var(--accent-teal, #0D9488) 0%, var(--accent-teal-light, #5EEAD4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Solid color title (no gradient) */
+.slide-title-solid {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: var(--text-primary, #1C1917);
+  background-clip: unset;
+  filter: none;
+  animation: none;
+}
+
+/* Subtitle */
+.slide-subtitle {
+  font-size: clamp(1rem, 2vw, 1.375rem);
+  color: var(--text-secondary, #44403C);
+  margin: var(--spacing-4, 1rem) auto 0;
+  font-weight: 400;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Card Styles - Liquid Glass
+   ======================================== */
+
+.slide-card {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: var(--radius-2xl, 1.5rem);
+  padding: var(--spacing-8, 2rem) var(--spacing-6, 1.5rem);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition:
+    transform var(--duration-normal, 300ms) var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)),
+    box-shadow var(--duration-normal, 300ms) var(--ease-out, ease-out),
+    background var(--duration-normal, 300ms) ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out forwards;
+  contain: content;
+}
+
+/* Staggered card animations */
+.slide-grid-2 .slide-card:nth-child(1) { animation-delay: 0.15s; }
+.slide-grid-2 .slide-card:nth-child(2) { animation-delay: 0.25s; }
+
+.slide-grid-4 .slide-card:nth-child(1) { animation-delay: 0.1s; }
+.slide-grid-4 .slide-card:nth-child(2) { animation-delay: 0.17s; }
+.slide-grid-4 .slide-card:nth-child(3) { animation-delay: 0.24s; }
+.slide-grid-4 .slide-card:nth-child(4) { animation-delay: 0.31s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accent bar on top */
+.slide-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--spacing-4, 1rem);
+  right: var(--spacing-4, 1rem);
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--apollo-pink, #DB2777),
+    var(--apollo-purple, #7C3AED)
+  );
+  border-radius: 0 0 var(--radius-full, 9999px) var(--radius-full, 9999px);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-slow, 500ms) var(--ease-out, ease-out);
+}
+
+/* Glow effect on hover */
+.slide-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(124, 58, 237, 0.06) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-normal, 300ms) ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Card hover state */
+.slide-card:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  box-shadow:
+    0 16px 48px rgba(124, 58, 237, 0.12),
+    0 6px 16px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.slide-card:hover::before {
+  transform: scaleX(1);
+}
+
+.slide-card:hover::after {
+  opacity: 1;
+}
+
+/* Focus state for accessibility */
+.slide-card:focus-visible {
+  outline: 2px solid var(--apollo-purple, #7C3AED);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   Card Content Typography
+   ======================================== */
+
+.card-title {
+  font-size: var(--font-size-xl, 1.25rem);
+  font-weight: 700;
+  color: var(--text-primary, #1C1917);
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  transition: color var(--duration-fast, 150ms) ease;
+  opacity: 0;
+  animation: textFadeIn 0.6s ease-out forwards;
+}
+
+/* Staggered text animations */
+.slide-grid-2 .slide-card:nth-child(1) .card-title { animation-delay: 0.4s; }
+.slide-grid-2 .slide-card:nth-child(2) .card-title { animation-delay: 0.5s; }
+.slide-grid-4 .slide-card:nth-child(1) .card-title { animation-delay: 0.35s; }
+.slide-grid-4 .slide-card:nth-child(2) .card-title { animation-delay: 0.42s; }
+.slide-grid-4 .slide-card:nth-child(3) .card-title { animation-delay: 0.49s; }
+.slide-grid-4 .slide-card:nth-child(4) .card-title { animation-delay: 0.56s; }
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-card:hover .card-title {
+  color: var(--text-primary, #1C1917);
+}
+
+.card-description {
+  font-size: var(--font-size-base, 1rem);
+  line-height: 1.75;
+  color: var(--text-secondary, #44403C);
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  animation: textFadeIn 0.6s ease-out forwards;
+}
+
+.slide-grid-2 .slide-card:nth-child(1) .card-description { animation-delay: 0.5s; }
+.slide-grid-2 .slide-card:nth-child(2) .card-description { animation-delay: 0.6s; }
+.slide-grid-4 .slide-card:nth-child(1) .card-description { animation-delay: 0.45s; }
+.slide-grid-4 .slide-card:nth-child(2) .card-description { animation-delay: 0.52s; }
+.slide-grid-4 .slide-card:nth-child(3) .card-description { animation-delay: 0.59s; }
+.slide-grid-4 .slide-card:nth-child(4) .card-description { animation-delay: 0.66s; }
+
+/* ========================================
+   Icon Wrapper - Liquid Glass
+   ======================================== */
+
+.icon-wrapper {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-xl, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-5, 1.25rem);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition:
+    transform var(--duration-normal, 300ms) var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)),
+    box-shadow var(--duration-normal, 300ms) ease;
+  position: relative;
+  flex-shrink: 0;
+  opacity: 0;
+  animation: iconPopIn 0.5s ease-out forwards;
+}
+
+/* Staggered icon animations */
+.slide-grid-2 .slide-card:nth-child(1) .icon-wrapper { animation-delay: 0.3s; }
+.slide-grid-2 .slide-card:nth-child(2) .icon-wrapper { animation-delay: 0.4s; }
+.slide-grid-4 .slide-card:nth-child(1) .icon-wrapper { animation-delay: 0.25s; }
+.slide-grid-4 .slide-card:nth-child(2) .icon-wrapper { animation-delay: 0.32s; }
+.slide-grid-4 .slide-card:nth-child(3) .icon-wrapper { animation-delay: 0.39s; }
+.slide-grid-4 .slide-card:nth-child(4) .icon-wrapper { animation-delay: 0.46s; }
+
+@keyframes iconPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Gradient border on hover */
+.icon-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius-xl, 1rem) + 2px);
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(219, 39, 119, 0.4),
+    rgba(124, 58, 237, 0.4)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--duration-normal, 300ms) ease;
+}
+
+.slide-card:hover .icon-wrapper {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.15),
+    0 4px 10px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.slide-card:hover .icon-wrapper::before {
+  opacity: 1;
+}
+
+.icon-wrapper-large {
+  width: 88px;
+  height: 88px;
+}
+
+.icon-content {
+  font-size: 2rem;
+  color: white;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-content svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* ========================================
+   Grid Layouts
+   ======================================== */
+
+.slide-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-8, 2rem);
+  align-items: stretch;
+}
+
+.slide-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6, 1.5rem);
+  align-items: stretch;
+}
+
+.slide-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-6, 1.5rem);
+  align-items: start;
+}
+
+/* ========================================
+   Section Divider
+   ======================================== */
+
+.section-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--apollo-pink, #DB2777),
+    var(--apollo-purple, #7C3AED)
+  );
+  border-radius: var(--radius-full, 9999px);
+  margin: var(--spacing-4, 1rem) auto;
+}
+
+/* ========================================
+   Responsive Styles
+   ======================================== */
+
+@media (max-width: 1200px) {
+  .slide-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .slide-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 968px) {
+  .slide-content {
+    padding: var(--spacing-8, 2rem) var(--spacing-4, 1rem);
+  }
+
+  .slide-header {
+    margin-bottom: var(--spacing-10, 2.5rem);
+  }
+
+  .slide-header::after {
+    width: 60px;
+    height: 2px;
+    bottom: -1rem;
+  }
+
+  .slide-title {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+  }
+
+  .slide-title-hero {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .slide-subtitle {
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  .slide-grid-2,
+  .slide-grid-3,
+  .slide-grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4, 1rem);
+  }
+
+  .slide-card {
+    padding: var(--spacing-6, 1.5rem) var(--spacing-4, 1rem);
+  }
+
+  .card-title {
+    font-size: var(--font-size-lg, 1.125rem);
+  }
+
+  .card-description {
+    font-size: var(--font-size-sm, 0.875rem);
+  }
+
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--spacing-4, 1rem);
+  }
+
+  .icon-wrapper-large {
+    width: 72px;
+    height: 72px;
+  }
+
+  .icon-content {
+    font-size: 1.75rem;
+  }
+
+  .icon-content svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-content {
+    padding: var(--spacing-6, 1.5rem) var(--spacing-3, 0.75rem);
+  }
+
+  .slide-card {
+    padding: var(--spacing-5, 1.25rem) var(--spacing-4, 1rem);
+    border-radius: var(--radius-xl, 1rem);
+  }
+
+  .slide-card:hover {
+    transform: translateY(-4px);
+  }
+}

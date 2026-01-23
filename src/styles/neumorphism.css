@@ -1,0 +1,35 @@
+/* Neumorphism utility classes */
+.neu {
+  background: #f0f0f0;
+  box-shadow: 
+    20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+}
+
+.neu-inset {
+  background: #f0f0f0;
+  box-shadow: 
+    inset 20px 20px 60px #bebebe,
+    inset -20px -20px 60px #ffffff;
+}
+
+.neu-button {
+  background: #f0f0f0;
+  box-shadow: 
+    5px 5px 10px #bebebe,
+    -5px -5px 10px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.neu-button:active {
+  box-shadow: 
+    inset 5px 5px 10px #bebebe,
+    inset -5px -5px 10px #ffffff;
+}
+
+.neu-colored {
+  background: linear-gradient(135deg, #EFF6FF, #F5F3FF);
+  box-shadow: 
+    20px 20px 60px #d1d5db,
+    -20px -20px 60px #ffffff;
+}

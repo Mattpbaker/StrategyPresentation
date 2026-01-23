@@ -1,0 +1,254 @@
+/* ========================================
+   Glassmorphism & Liquid Glass - 2025/2026
+   Inspired by Apple's Liquid Glass design language
+   ======================================== */
+
+/* ========================================
+   Legacy Glass (kept for compatibility)
+   ======================================== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-colored {
+  background: linear-gradient(
+    135deg,
+    rgba(236, 72, 153, 0.1),
+    rgba(139, 92, 246, 0.1)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   Liquid Glass - Primary Effect
+   ======================================== */
+
+.liquid-glass {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-2xl, 1.5rem);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+/* Glossy highlight effect */
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 100%
+  );
+  border-radius: var(--radius-2xl, 1.5rem) var(--radius-2xl, 1.5rem) 0 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Light refraction on hover */
+.liquid-glass:hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ========================================
+   Liquid Glass Variants
+   ======================================== */
+
+/* Softer variant for cards */
+.liquid-glass-soft {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-xl, 1rem);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Strong variant for emphasis */
+.liquid-glass-strong {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-2xl, 1.5rem);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.04),
+    inset 0 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Colored variant with purple tint */
+.liquid-glass-purple {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.08) 0%,
+    rgba(219, 39, 119, 0.05) 50%,
+    rgba(124, 58, 237, 0.08) 100%
+  );
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: var(--radius-2xl, 1.5rem);
+  box-shadow:
+    0 8px 32px rgba(124, 58, 237, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Teal accent variant */
+.liquid-glass-teal {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 148, 136, 0.06) 0%,
+    rgba(94, 234, 212, 0.04) 100%
+  );
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  border-radius: var(--radius-2xl, 1.5rem);
+  box-shadow:
+    0 8px 32px rgba(13, 148, 136, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* ========================================
+   Interactive States
+   ======================================== */
+
+.liquid-glass-interactive {
+  transition:
+    transform var(--duration-normal, 300ms) var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)),
+    box-shadow var(--duration-normal, 300ms) var(--ease-out, ease-out),
+    border-color var(--duration-fast, 150ms) ease;
+  cursor: pointer;
+}
+
+.liquid-glass-interactive:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.1),
+    0 6px 16px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.liquid-glass-interactive:active {
+  transform: translateY(-2px);
+  transition-duration: var(--duration-fast, 150ms);
+}
+
+/* Focus state for accessibility */
+.liquid-glass-interactive:focus-visible {
+  outline: 2px solid var(--apollo-purple, #7C3AED);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   Accent Bar Decorations
+   ======================================== */
+
+.liquid-glass-accent-top {
+  position: relative;
+}
+
+.liquid-glass-accent-top::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--spacing-4, 1rem);
+  right: var(--spacing-4, 1rem);
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--apollo-purple, #7C3AED),
+    var(--apollo-pink, #DB2777)
+  );
+  border-radius: 0 0 var(--radius-full, 9999px) var(--radius-full, 9999px);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-slow, 500ms) var(--ease-out, ease-out);
+}
+
+.liquid-glass-accent-top:hover::after {
+  transform: scaleX(1);
+}
+
+/* ========================================
+   Utility Modifiers
+   ======================================== */
+
+.glass-no-border {
+  border: none !important;
+}
+
+.glass-rounded-lg {
+  border-radius: var(--radius-lg, 0.75rem) !important;
+}
+
+.glass-rounded-xl {
+  border-radius: var(--radius-xl, 1rem) !important;
+}
+
+.glass-rounded-2xl {
+  border-radius: var(--radius-2xl, 1.5rem) !important;
+}
+
+.glass-rounded-3xl {
+  border-radius: var(--radius-3xl, 2rem) !important;
+}

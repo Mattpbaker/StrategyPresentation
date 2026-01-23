@@ -1,0 +1,203 @@
+/* ========================================
+   Values Slide - 2025/2026 Update
+   Bento Grid with Featured First Value
+   ======================================== */
+
+.values-slide {
+  /* Uses slide-base styles */
+}
+
+.values-content {
+  /* Uses slide-content styles */
+}
+
+/* ========================================
+   Uniform 2x2 Grid Layout for Values
+   All cards equal size
+   ======================================== */
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: var(--spacing-5, 1.25rem);
+  align-items: stretch;
+}
+
+/* All cards have equal sizing */
+.values-grid .value-card {
+  min-height: 220px;
+}
+
+/* ========================================
+   Value Card Styling - Scoped to values-slide
+   ======================================== */
+
+.values-slide .value-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  justify-content: flex-start;
+  padding: var(--spacing-6, 1.5rem);
+  position: relative;
+  /* Override base slide-card animation */
+  opacity: 1;
+  animation: none;
+}
+
+/* All cards use same vertical layout - no special styling for first card */
+
+/* ========================================
+   Icon Wrapper - Scoped to values-slide
+   ======================================== */
+
+.values-slide .value-icon-wrapper {
+  position: relative;
+  margin-bottom: var(--spacing-4, 1rem);
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: transform var(--duration-normal, 300ms) var(--ease-spring);
+  /* Override base icon-wrapper styles */
+  opacity: 1;
+  animation: none;
+}
+
+.values-slide .value-card:hover .value-icon-wrapper {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.values-slide .value-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.values-slide .value-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Letter badge - Scoped to values-slide */
+.values-slide .value-icon-letter {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+}
+
+/* ========================================
+   Typography - Scoped to values-slide
+   ======================================== */
+
+.values-slide .value-name {
+  margin-bottom: var(--spacing-2, 0.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: var(--font-size-xl, 1.25rem);
+  font-weight: 700;
+  color: var(--text-primary, #1C1917);
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  /* Override base card-title styles */
+  opacity: 1;
+  animation: none;
+}
+
+.values-slide .value-description {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: var(--font-size-base, 1rem);
+  line-height: 1.7;
+  color: var(--text-secondary, #44403C);
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 0.01em;
+  /* Override base card-description styles */
+  opacity: 1;
+  animation: none;
+}
+
+/* ========================================
+   Color-coded accent bars - Scoped to values-slide
+   ======================================== */
+
+.values-slide .value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--spacing-4, 1rem);
+  right: var(--spacing-4, 1rem);
+  height: 3px;
+  background: var(--value-color, var(--apollo-purple));
+  border-radius: 0 0 var(--radius-full) var(--radius-full);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-slow, 500ms) var(--ease-out);
+}
+
+.values-slide .value-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ========================================
+   Responsive - Scoped to values-slide
+   ======================================== */
+
+@media (max-width: 768px) {
+  .values-slide .values-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4, 1rem);
+  }
+
+  .values-slide .values-grid .value-card {
+    min-height: auto;
+  }
+
+  .values-slide .value-card {
+    padding: var(--spacing-5, 1.25rem);
+  }
+
+  .values-slide .value-icon-wrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .values-slide .value-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .values-slide .value-name {
+    font-size: var(--font-size-lg, 1.125rem);
+  }
+
+  .values-slide .value-description {
+    font-size: var(--font-size-sm, 0.875rem);
+  }
+}
