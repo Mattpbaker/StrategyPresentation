@@ -127,14 +127,11 @@ function CommunitySlide({ slideIndex }) {
               </ul>
             </div>
           ))}
-        </animated.div>
-
-        {/* Events Chart */}
-        <div className="community-chart-section">
-          <div className="chart-card">
+          {/* Events Chart - in row 2 with sections 3 & 4 */}
+          <div className="chart-card community-chart-card">
             <img src={eventsImg} alt="Events Ran per Term" />
           </div>
-        </div>
+        </animated.div>
       </div>
     </div>
   )

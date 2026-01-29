@@ -82,23 +82,31 @@
 }
 
 /* ========================================
-   Simple 2x2 Grid Layout
-   Row 1: 2 equal boxes
-   Row 2: 2 equal boxes
+   Grid Layout
+   Row 1: 2 boxes (3 cols each)
+   Row 2: 2 boxes + chart (2 cols each)
    ======================================== */
 
 .community-sections {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto auto;
   gap: 0.75rem;
   width: 100%;
 }
 
+/* Row 1: 2 cards, each span 3 columns */
 .community-section-card.section-1,
-.community-section-card.section-2,
+.community-section-card.section-2 {
+  grid-column: span 3;
+  min-height: auto;
+}
+
+/* Row 2: 3 items, each span 2 columns */
 .community-section-card.section-3,
-.community-section-card.section-4 {
+.community-section-card.section-4,
+.community-chart-card {
+  grid-column: span 2;
   min-height: auto;
 }
 
@@ -245,45 +253,36 @@
 }
 
 /* ========================================
-   Chart Section
+   Chart Card (in grid row 2)
    ======================================== */
 
-.community-chart-section {
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
-
-.community-slide .chart-card {
+.community-chart-card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border-radius: var(--radius-lg, 0.75rem);
+  border-radius: var(--radius-xl, 1rem);
   border: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow:
     0 4px 20px rgba(0, 0, 0, 0.06),
     0 1px 4px rgba(0, 0, 0, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  padding: 0.5rem;
+  padding: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 320px;
-  max-height: 140px;
 }
 
-.community-slide .chart-card:hover {
-  transform: translateY(-2px);
+.community-chart-card:hover {
+  transform: translateY(-4px);
   box-shadow:
-    0 8px 28px rgba(0, 0, 0, 0.1),
-    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 12px 40px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
-.community-slide .chart-card img {
+.community-chart-card img {
   max-width: 100%;
-  max-height: 120px;
   height: auto;
   object-fit: contain;
   border-radius: var(--radius-sm, 0.25rem);
@@ -297,11 +296,27 @@
   .community-sections {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .community-section-card.section-1,
+  .community-section-card.section-2,
+  .community-section-card.section-3,
+  .community-section-card.section-4,
+  .community-chart-card {
+    grid-column: span 1;
+  }
 }
 
 @media (max-width: 768px) {
   .community-sections {
     grid-template-columns: 1fr;
+  }
+
+  .community-section-card.section-1,
+  .community-section-card.section-2,
+  .community-section-card.section-3,
+  .community-section-card.section-4,
+  .community-chart-card {
+    grid-column: 1 / -1;
   }
 
   .community-content {
