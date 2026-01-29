@@ -9,6 +9,13 @@ function DepartmentTargetsIntroSlide({ slideIndex }) {
   const containerRef = useRef(null)
   const contentRef = useRef(null)
 
+  const raggColors = [
+    { rating: 'Red', color: '#EF4444', meaning: 'Requires action and redesign' },
+    { rating: 'Amber', color: '#F97316', meaning: 'Needs attention' },
+    { rating: 'Green', color: '#22C55E', meaning: 'On track' },
+    { rating: 'Gold', color: '#FBBF24', meaning: 'Exceeding targets' }
+  ]
+
   // React Spring animations
   const contentSpring = useSpring({
     from: { opacity: 0, scale: 0.95 },
@@ -97,6 +104,24 @@ function DepartmentTargetsIntroSlide({ slideIndex }) {
                   </svg>
                 </div>
                 <p className="feature-text">Monthly review cycles</p>
+              </div>
+            </div>
+
+            {/* RAGG Rating Legend */}
+            <div className="ragg-rating-legend">
+              <h3 className="ragg-legend-heading">RAGG Rating System</h3>
+              <div className="ragg-badges-grid">
+                {raggColors.map((item, index) => (
+                  <div key={index} className="ragg-badge-item">
+                    <div
+                      className="ragg-badge"
+                      style={{ backgroundColor: item.color }}
+                    >
+                      {item.rating}
+                    </div>
+                    <span className="ragg-badge-meaning">{item.meaning}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </animated.div>

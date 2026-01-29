@@ -7,29 +7,13 @@ import './AlignmentSlide.css'
 
 function AlignmentSlide({ slideIndex }) {
   const decisionRef = useRef(null)
-  const learningRef = useRef(null)
   const containerRef = useRef(null)
 
   const decisionSteps = [
-    'Issue or opportunity identified',
-    'Diverse perspectives surfaced (working groups)',
-    'Dissent and risks explicitly raised',
-    'Decision agreed with rationale',
-    'Ownership assigned'
-  ]
-
-  const learningSteps = [
-    'Decisions logged in Notion',
-    'Rationale recorded',
-    'Actions tracked with owners',
-    'Reviewed in monthly strategy sessions',
-    'Updated into future strategy'
-  ]
-
-  const tools = [
-    'Deep Democracy principles',
-    'Working Groups',
-    'Monthly Strategy Sessions'
+    'Decisions are made by consensus whenever possible',
+    'If consensus cannot be achieved, a simple majority vote is taken',
+    'Members not present during a vote cannot contest the decision but may express views beforehand',
+    'Outcome of votes is captured by the training session note taker'
   ]
 
   // React Spring animations
@@ -37,14 +21,7 @@ function AlignmentSlide({ slideIndex }) {
     from: { opacity: 0, y: 30 },
     to: { opacity: 1, y: 0 },
     delay: 200,
-    config: { tension: 180, friction: 40 } // Lighter config for better performance
-  })
-
-  const learningSpring = useSpring({
-    from: { opacity: 0, y: 30 },
-    to: { opacity: 1, y: 0 },
-    delay: 350,
-    config: { tension: 180, friction: 40 } // Lighter config for better performance
+    config: { tension: 180, friction: 40 }
   })
 
   // GSAP animations - only run once when slide becomes visible
@@ -80,20 +57,20 @@ function AlignmentSlide({ slideIndex }) {
       {/* Content */}
       <div className="slide-content alignment-content">
         <div className="slide-header">
-          <h1 className="slide-title">How We Decide, Learn & Stay Aligned</h1>
+          <h1 className="slide-title">Decision-Making Process</h1>
+          <p className="slide-subtitle">From our Team Constitution - Article 6</p>
         </div>
 
-        <div className="slide-grid-2">
+        <div className="decision-container">
           {/* Decision Process Section */}
-          <animated.div 
+          <animated.div
             ref={decisionRef}
             className="slide-card decision-section"
             style={decisionSpring}
           >
-            <h2 className="section-title">How decisions are made</h2>
-            <h3 className="section-subtitle">Decision Process</h3>
+            <h2 className="section-title">Article 6: Decision-Making</h2>
             <div className="section-divider" />
-            
+
             <div className="steps-list">
               {decisionSteps.map((step, index) => (
                 <div key={index} className="step-item">
@@ -102,43 +79,7 @@ function AlignmentSlide({ slideIndex }) {
                 </div>
               ))}
             </div>
-
-            <div className="quote-box">
-              <p className="quote-text">"Alignment is built through process, not consensus."</p>
-            </div>
           </animated.div>
-
-          {/* Learning Capture Section */}
-          <animated.div 
-            ref={learningRef}
-            className="slide-card learning-section"
-            style={learningSpring}
-          >
-            <h2 className="section-title">How learning is retained</h2>
-            <h3 className="section-subtitle">Learning Capture</h3>
-            <div className="section-divider" />
-            
-            <div className="steps-list">
-              {learningSteps.map((step, index) => (
-                <div key={index} className="step-item">
-                  <div className="step-number">{index + 1}</div>
-                  <p className="step-text">{step}</p>
-                </div>
-              ))}
-            </div>
-          </animated.div>
-        </div>
-
-        {/* Tools Section */}
-        <div className="tools-container">
-          <div className="slide-card tools-box">
-            <p className="tools-label">Tools:</p>
-            <div className="tools-list">
-              {tools.map((tool, index) => (
-                <span key={index} className="tool-tag">{tool}</span>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </div>

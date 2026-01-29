@@ -27,22 +27,27 @@
 }
 
 /* ========================================
-   Uniform 2x2 Grid Layout
-   All cards equal size
+   Bento Grid Layout - 3 Featured + 4 Standard
    ======================================== */
 
 .changes-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto;
-  gap: var(--spacing-5, 1.25rem);
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
   width: 100%;
   align-items: stretch;
 }
 
-/* All cards have equal sizing */
-.changes-grid .change-card {
-  min-height: 280px;
+/* Featured cards - first 3 items, span 4 columns each */
+.changes-grid .change-card.featured {
+  grid-column: span 4;
+  min-height: 160px;
+}
+
+/* Standard cards - remaining 4 items, span 3 columns each */
+.changes-grid .change-card.standard {
+  grid-column: span 3;
+  min-height: auto;
 }
 
 /* ========================================
@@ -56,7 +61,7 @@
   text-align: left;
   height: 100%;
   justify-content: flex-start;
-  padding: var(--spacing-6, 1.5rem);
+  padding: var(--spacing-3, 0.75rem);
   position: relative;
   transition:
     transform var(--duration-normal, 300ms) var(--ease-spring),
@@ -68,7 +73,7 @@
   );
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-radius: var(--radius-2xl, 1.5rem);
+  border-radius: var(--radius-xl, 1rem);
   border: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow:
     0 4px 24px rgba(0, 0, 0, 0.06),
@@ -81,9 +86,9 @@
   content: '';
   position: absolute;
   top: 0;
-  left: var(--spacing-4, 1rem);
-  right: var(--spacing-4, 1rem);
-  height: 4px;
+  left: var(--spacing-2, 0.5rem);
+  right: var(--spacing-2, 0.5rem);
+  height: 3px;
   background: var(--change-color, var(--apollo-purple));
   border-radius: 0 0 var(--radius-full) var(--radius-full);
 }
@@ -96,7 +101,61 @@
     inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
-/* All cards use same vertical layout - no special styling for featured cards */
+/* ========================================
+   Featured Card Styling
+   ======================================== */
+
+.key-changes-slide .change-card.featured {
+  padding: 1.25rem;
+}
+
+.key-changes-slide .change-card.featured .change-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--spacing-3, 0.75rem);
+}
+
+.key-changes-slide .change-card.featured .change-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.key-changes-slide .change-card.featured .change-title {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-2, 0.5rem);
+}
+
+.key-changes-slide .change-card.featured .change-description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Standard Card Styling
+   ======================================== */
+
+.key-changes-slide .change-card.standard {
+  padding: 1rem;
+}
+
+.key-changes-slide .change-card.standard .change-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--spacing-2, 0.5rem);
+}
+
+.key-changes-slide .change-card.standard .change-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.key-changes-slide .change-card.standard .change-title {
+  font-size: 0.9375rem;
+}
+
+.key-changes-slide .change-card.standard .change-description {
+  font-size: 0.8125rem;
+}
 
 /* ========================================
    Icon Wrapper - Scoped to key-changes-slide
@@ -104,16 +163,15 @@
 
 .key-changes-slide .change-icon-wrapper {
   position: relative;
-  margin-bottom: var(--spacing-4, 1rem);
   flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-xl, 1rem);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg, 0.75rem);
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow:
-    0 6px 16px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transition: transform var(--duration-normal, 300ms) var(--ease-spring);
 }
@@ -129,8 +187,8 @@
 }
 
 .key-changes-slide .change-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 18px;
+  height: 18px;
 }
 
 /* ========================================
@@ -138,18 +196,18 @@
    ======================================== */
 
 .key-changes-slide .change-title {
-  margin-bottom: var(--spacing-2, 0.5rem);
-  font-size: var(--font-size-xl, 1.25rem);
+  margin-bottom: var(--spacing-1, 0.25rem);
+  font-size: var(--font-size-sm, 0.875rem);
   font-weight: 700;
   color: var(--text-primary, #1C1917);
   letter-spacing: -0.01em;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .key-changes-slide .change-description {
   flex-grow: 1;
-  font-size: var(--font-size-base, 1rem);
-  line-height: 1.7;
+  font-size: var(--font-size-xs, 0.75rem);
+  line-height: 1.5;
   color: var(--text-secondary, #44403C);
   margin: 0;
   font-weight: 400;
@@ -167,28 +225,44 @@
    Responsive - Scoped to key-changes-slide
    ======================================== */
 
+@media (max-width: 1024px) {
+  .key-changes-slide .changes-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .key-changes-slide .changes-grid .change-card.featured {
+    grid-column: span 2;
+  }
+
+  .key-changes-slide .changes-grid .change-card.standard {
+    grid-column: span 3;
+  }
+}
+
 @media (max-width: 768px) {
   .key-changes-slide .changes-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-4, 1rem);
+    gap: var(--spacing-3, 0.75rem);
   }
 
-  .key-changes-slide .changes-grid .change-card {
+  .key-changes-slide .changes-grid .change-card.featured,
+  .key-changes-slide .changes-grid .change-card.standard {
+    grid-column: span 1;
     min-height: auto;
   }
 
   .key-changes-slide .key-changes-content {
     padding: var(--spacing-6, 1.5rem) var(--spacing-4, 1rem);
-    gap: var(--spacing-6, 1.5rem);
+    gap: var(--spacing-5, 1.25rem);
   }
 
   .key-changes-slide .change-card {
-    padding: var(--spacing-5, 1.25rem);
+    padding: var(--spacing-4, 1rem);
   }
 
   .key-changes-slide .change-icon-wrapper {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
   }
 
   .key-changes-slide .change-icon svg {
@@ -197,7 +271,7 @@
   }
 
   .key-changes-slide .change-title {
-    font-size: var(--font-size-lg, 1.125rem);
+    font-size: var(--font-size-base, 1rem);
   }
 
   .key-changes-slide .change-description {

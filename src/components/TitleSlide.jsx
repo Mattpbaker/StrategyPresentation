@@ -98,7 +98,7 @@ function TitleSlide({ slideIndex }) {
             opacity: titleSpring.opacity
           }}
         >
-          Strategy Presentation
+          Strategy Checkpoint
         </animated.h1>
       </div>
     </div>

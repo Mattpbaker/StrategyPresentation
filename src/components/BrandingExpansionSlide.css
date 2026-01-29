@@ -1,0 +1,335 @@
+/* ========================================
+   Branding Expansion Slide
+   ======================================== */
+
+.branding-slide {
+  /* Uses slide-base styles */
+}
+
+.branding-content {
+  /* Uses slide-content styles */
+}
+
+/* ========================================
+   Grid Layout
+   ======================================== */
+
+.branding-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--spacing-6, 1.5rem);
+  align-items: stretch;
+}
+
+/* ========================================
+   Main Card
+   ======================================== */
+
+.branding-main-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-8, 2rem);
+  position: relative;
+}
+
+.branding-main-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--spacing-6, 1.5rem);
+  right: var(--spacing-6, 1.5rem);
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--apollo-purple, #7C3AED),
+    var(--apollo-blue, #2563EB)
+  );
+  border-radius: 0 0 var(--radius-full) var(--radius-full);
+}
+
+.branding-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-5, 1.25rem);
+  background: linear-gradient(
+    135deg,
+    var(--apollo-purple, #7C3AED),
+    var(--apollo-blue, #2563EB)
+  );
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+}
+
+.branding-icon-wrapper svg {
+  color: white;
+}
+
+.branding-title {
+  font-size: var(--font-size-3xl, 1.875rem);
+  font-weight: 800;
+  color: var(--text-primary, #1C1917);
+  margin: 0 0 var(--spacing-4, 1rem) 0;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.branding-description {
+  font-size: var(--font-size-lg, 1.125rem);
+  line-height: 1.8;
+  color: var(--text-secondary, #44403C);
+  margin: 0 0 var(--spacing-6, 1.5rem) 0;
+  flex-grow: 1;
+}
+
+.branding-applications {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2, 0.5rem);
+}
+
+.branding-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-2, 0.5rem) var(--spacing-4, 1rem);
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.1) 0%,
+    rgba(37, 99, 235, 0.1) 100%
+  );
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--apollo-purple, #7C3AED);
+}
+
+/* ========================================
+   Colors Card
+   ======================================== */
+
+.branding-colors-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-6, 1.5rem);
+}
+
+.colors-title {
+  font-size: var(--font-size-xl, 1.25rem);
+  font-weight: 700;
+  color: var(--text-primary, #1C1917);
+  margin: 0 0 var(--spacing-5, 1.25rem) 0;
+}
+
+.color-swatches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-3, 0.75rem);
+  margin-bottom: var(--spacing-5, 1.25rem);
+}
+
+.color-swatch {
+  aspect-ratio: 1.5;
+  border-radius: var(--radius-lg, 0.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform var(--duration-normal, 300ms) var(--ease-spring);
+}
+
+.color-swatch:hover {
+  transform: scale(1.05);
+}
+
+.color-black {
+  background: #1C1917;
+}
+
+.color-black .color-name {
+  color: white;
+}
+
+.color-white {
+  background: #FFFFFF;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.color-white .color-name {
+  color: #1C1917;
+}
+
+.color-blue {
+  background: #2563EB;
+}
+
+.color-blue .color-name {
+  color: white;
+}
+
+.color-purple {
+  background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+}
+
+.color-purple .color-name {
+  color: white;
+}
+
+.color-name {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+}
+
+.color-hex {
+  font-size: 0.7rem;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  opacity: 0.75;
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+
+.color-black .color-hex,
+.color-blue .color-hex,
+.color-purple .color-hex {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.color-white .color-hex {
+  color: rgba(28, 25, 23, 0.6);
+}
+
+.color-badge {
+  position: absolute;
+  top: var(--spacing-2, 0.5rem);
+  right: var(--spacing-2, 0.5rem);
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ========================================
+   Typography Note
+   ======================================== */
+
+.branding-note {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3, 0.75rem);
+  padding: var(--spacing-4, 1rem);
+  background: rgba(124, 58, 237, 0.05);
+  border-radius: var(--radius-lg, 0.75rem);
+  margin-bottom: var(--spacing-4, 1rem);
+}
+
+.note-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md, 0.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.note-icon svg {
+  color: var(--apollo-purple, #7C3AED);
+}
+
+.note-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.note-label {
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 500;
+  color: var(--text-tertiary, #78716C);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.note-value {
+  font-size: var(--font-size-base, 1rem);
+  font-weight: 600;
+  color: var(--text-primary, #1C1917);
+}
+
+/* ========================================
+   Change Indicator
+   ======================================== */
+
+.branding-change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3, 0.75rem);
+  padding: var(--spacing-3, 0.75rem);
+  background: white;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.change-old {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--text-tertiary, #78716C);
+  text-decoration: line-through;
+}
+
+.branding-change svg {
+  color: var(--apollo-purple, #7C3AED);
+}
+
+.change-new {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--apollo-purple, #7C3AED);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .branding-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .branding-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4, 1rem);
+  }
+
+  .branding-main-card,
+  .branding-colors-card {
+    padding: var(--spacing-5, 1.25rem);
+  }
+
+  .branding-title {
+    font-size: var(--font-size-2xl, 1.5rem);
+  }
+
+  .branding-description {
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  .color-swatches {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .color-swatch {
+    aspect-ratio: 1;
+  }
+}

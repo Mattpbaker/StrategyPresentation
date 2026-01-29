@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react'
 import { useSpring, animated } from '@react-spring/web'
 import { gsap } from 'gsap'
 import { GradientMesh } from './effects'
+import totalRevenueImg from '../assets/total-revenue.png'
+import netProfitImg from '../assets/net-profit-margin.png'
 import '../styles/slide-base.css'
 import './FinanceSlide.css'
 
@@ -44,7 +46,7 @@ function FinanceSlide({ slideIndex }) {
 
   const sections = [
     {
-      title: 'Goal',
+      title: 'Previous Target',
       icon: '🎯',
       content: [
         '£50,000 revenue with a 25% profit margin',
@@ -71,13 +73,13 @@ function FinanceSlide({ slideIndex }) {
       accentColor: '#8B5CF6'
     },
     {
-      title: 'What Changed',
+      title: 'Improvements to Target',
       icon: '🚀',
       content: [
-        'Moved to monthly financial check-ins',
-        'Introduced a £500 per-member contribution target',
-        'Improved profit tracking using time-based cost modelling',
-        'Delivered a financial literacy workshop to build shared capability'
+        'Monthly financial check-ins embedded as standard',
+        '£500 per-member contribution target maintained',
+        'Time-based cost modelling for all ventures',
+        'Financial literacy as core team capability'
       ],
       accentColor: '#F59E0B'
     }
@@ -128,6 +130,16 @@ function FinanceSlide({ slideIndex }) {
             </div>
           ))}
         </animated.div>
+
+        {/* Charts Row */}
+        <div className="finance-charts-row">
+          <div className="chart-card">
+            <img src={totalRevenueImg} alt="Total Revenue Chart" />
+          </div>
+          <div className="chart-card">
+            <img src={netProfitImg} alt="Net Profit Margin Chart" />
+          </div>
+        </div>
       </div>
     </div>
   )

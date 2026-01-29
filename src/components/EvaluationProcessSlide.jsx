@@ -44,11 +44,6 @@ function EvaluationProcessSlide({ slideIndex }) {
     }
   }, [])
 
-  const corePrinciple = {
-    text: "We use evaluation to force action, not reflection for reflection's sake.",
-    position: 'top'
-  }
-
   const processes = [
     {
       title: 'Working Groups',
@@ -65,8 +60,7 @@ function EvaluationProcessSlide({ slideIndex }) {
           <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
         </svg>
       ),
-      color: '#3B82F6',
-      position: 'left'
+      color: '#3B82F6'
     },
     {
       title: 'Strategy Simulation',
@@ -81,8 +75,7 @@ function EvaluationProcessSlide({ slideIndex }) {
           <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
         </svg>
       ),
-      color: '#8B5CF6',
-      position: 'left'
+      color: '#8B5CF6'
     },
     {
       title: 'SWOT → TOWS',
@@ -98,39 +91,7 @@ function EvaluationProcessSlide({ slideIndex }) {
           <line x1="3" y1="9" x2="21" y2="9"></line>
         </svg>
       ),
-      color: '#10B981',
-      position: 'right'
-    },
-    {
-      title: 'Monthly Strategy Sessions',
-      description: 'Act as our core ongoing evaluation mechanism',
-      details: [
-        'Provide transparency on progress and early identification of issues',
-        'Reduced reliance on infrequent termly reviews'
-      ],
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-      ),
-      color: '#F59E0B',
-      position: 'right'
-    },
-    {
-      title: 'RAGG Framework',
-      description: 'Progress evaluated using Red, Amber, Green, Gold',
-      details: [
-        'Red/Amber triggered redesign and working groups',
-        'Green validated delivery; Gold required stretch goals'
-      ],
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-        </svg>
-      ),
-      color: '#EF4444',
-      position: 'bottom'
+      color: '#10B981'
     }
   ]
 
@@ -148,12 +109,7 @@ function EvaluationProcessSlide({ slideIndex }) {
         {/* Header */}
         <animated.div className="evaluation-process-header" style={headerSpring}>
           <h1 className="slide-title">Evaluation Process</h1>
-        </animated.div>
-
-        {/* Core Principle */}
-        <animated.div className="core-principle-box" style={headerSpring}>
-          <div className="principle-icon">💡</div>
-          <p className="principle-text">"{corePrinciple.text}"</p>
+          <p className="slide-subtitle">How we translate strategy into action</p>
         </animated.div>
 
         {/* Process Grid */}

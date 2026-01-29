@@ -101,10 +101,10 @@ function StrategyReviewSlide({ slideIndex }) {
       {/* Content */}
       <div className="slide-content strategy-review-content">
         <div className="slide-header">
-          <h1 className="slide-title">Strategy Review</h1>
-          <p className="slide-subtitle">RAGG ratings for each department</p>
+          <h1 className="slide-title">Department RAGG Ratings</h1>
+          <p className="slide-subtitle">Progress evaluation using the RAGG framework</p>
         </div>
-        
+
         <div className="ratings-list">
           {ratings.map((rating, index) => (
             <animated.div
@@ -125,9 +125,9 @@ function StrategyReviewSlide({ slideIndex }) {
                 </div>
                 <div className="rating-right">
                   <div className="rating-badge-wrapper">
-                    <div 
-                      className="rating-badge" 
-                      style={{ 
+                    <div
+                      className="rating-badge"
+                      style={{
                         backgroundColor: rating.color,
                         boxShadow: `0 4px 16px ${rating.color}40`
                       }}
@@ -137,15 +137,36 @@ function StrategyReviewSlide({ slideIndex }) {
                   </div>
                 </div>
               </div>
-              <div 
+              <div
                 className="rating-progress-bar"
-                style={{ 
+                style={{
                   backgroundColor: rating.color,
                   boxShadow: `0 2px 8px ${rating.color}60`
                 }}
               ></div>
             </animated.div>
           ))}
+        </div>
+
+        {/* RAGG Legend */}
+        <div className="ragg-legend">
+          <div className="legend-item">
+            <div className="legend-dot" style={{ backgroundColor: '#EF4444' }} />
+            <span>Red - Triggered working groups to redesign targets</span>
+          </div>
+          <div className="legend-item">
+            <div className="legend-dot" style={{ backgroundColor: '#F97316' }} />
+            <span>Amber - Triggered reflection to address execution issues</span>
+          </div>
+          <div className="legend-item">
+            <div className="legend-dot" style={{ backgroundColor: '#22C55E' }} />
+            <span>Green - Recognised progress and validated delivery</span>
+          </div>
+          <div className="legend-item">
+            <div className="legend-dot" style={{ backgroundColor: '#FBBF24' }} />
+            <span>Gold - Prompted creation of stretch goals</span>
+          </div>
+          <p className="ragg-note">All outcomes and agreed actions captured in Notion.</p>
         </div>
       </div>
     </div>

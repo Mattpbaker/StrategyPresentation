@@ -11,9 +11,8 @@ function ValuesSlide({ slideIndex }) {
 
   // Core values data
   const values = [
-    { 
-      name: 'Perseverance', 
-      description: 'Pushing through challenges with determination',
+    {
+      name: 'Perseverance',
       color: '#3B82F6',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -23,9 +22,8 @@ function ValuesSlide({ slideIndex }) {
       ),
       letter: 'P'
     },
-    { 
-      name: 'Ambition', 
-      description: 'Striving for excellence and growth',
+    {
+      name: 'Ambition',
       color: '#8B5CF6',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -36,9 +34,8 @@ function ValuesSlide({ slideIndex }) {
       ),
       letter: 'A'
     },
-    { 
-      name: 'Integrity', 
-      description: 'Doing the right thing, always',
+    {
+      name: 'Integrity',
       color: '#10B981',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,9 +45,8 @@ function ValuesSlide({ slideIndex }) {
       ),
       letter: 'I'
     },
-    { 
-      name: 'Respect', 
-      description: 'Valuing every team member\'s contribution',
+    {
+      name: 'Respect',
       color: '#F59E0B',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -98,7 +94,10 @@ function ValuesSlide({ slideIndex }) {
       {/* Content */}
       <div className="slide-content values-content">
         <div className="slide-header">
-          <h1 className="slide-title">Our Core Values</h1>
+          <div className="values-title-wrapper">
+            <h1 className="slide-title">Our Core Values</h1>
+            <div className="values-badge green">GREEN</div>
+          </div>
           <p className="slide-subtitle">The principles that guide everything we do</p>
         </div>
         
@@ -121,7 +120,6 @@ function ValuesSlide({ slideIndex }) {
                 </div>
               </div>
               <h3 className="card-title value-name">{value.name}</h3>
-              <p className="card-description value-description">{value.description}</p>
             </animated.div>
           ))}
         </div>

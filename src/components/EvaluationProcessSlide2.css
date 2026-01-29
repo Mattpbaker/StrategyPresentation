@@ -1,0 +1,227 @@
+/* ========================================
+   Evaluation Process Slide 2
+   Monthly Sessions and RAGG Framework
+   ======================================== */
+
+.evaluation-process-slide-2 {
+  /* Uses slide-base styles */
+}
+
+.evaluation-process-2-content {
+  max-width: 1200px;
+}
+
+.evaluation-2-header {
+  text-align: center;
+  margin-bottom: var(--spacing-6, 1.5rem);
+}
+
+/* ========================================
+   Process Cards Grid
+   ======================================== */
+
+.evaluation-2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-5, 1.25rem);
+  margin-bottom: var(--spacing-6, 1.5rem);
+}
+
+.evaluation-2-card {
+  padding: var(--spacing-6, 1.5rem);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl, 1rem);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: all var(--duration-normal, 300ms) var(--ease-spring);
+  position: relative;
+}
+
+.evaluation-2-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--spacing-4, 1rem);
+  right: var(--spacing-4, 1rem);
+  height: 4px;
+  background: var(--accent-color, var(--apollo-purple));
+  border-radius: 0 0 var(--radius-full) var(--radius-full);
+}
+
+.evaluation-2-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.eval-card-header {
+  display: flex;
+  gap: var(--spacing-4, 1rem);
+  margin-bottom: var(--spacing-4, 1rem);
+}
+
+.eval-card-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg, 0.75rem);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.eval-card-titles {
+  flex: 1;
+}
+
+.eval-card-title {
+  font-size: var(--font-size-xl, 1.25rem);
+  font-weight: 700;
+  color: var(--text-primary, #1C1917);
+  margin: 0 0 var(--spacing-1, 0.25rem) 0;
+  letter-spacing: -0.01em;
+}
+
+.eval-card-description {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--text-secondary, #44403C);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.eval-card-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3, 0.75rem);
+}
+
+.eval-detail-item {
+  font-size: var(--font-size-sm, 0.875rem);
+  line-height: 1.6;
+  color: var(--text-secondary, #44403C);
+  padding-left: var(--spacing-5, 1.25rem);
+  position: relative;
+}
+
+.eval-detail-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-color, var(--apollo-purple));
+  border-radius: var(--radius-full);
+}
+
+/* ========================================
+   RAGG Legend Section
+   ======================================== */
+
+.ragg-legend-section {
+  padding: var(--spacing-5, 1.25rem);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl, 1rem);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.ragg-legend-title {
+  font-size: var(--font-size-lg, 1.125rem);
+  font-weight: 700;
+  color: var(--text-primary, #1C1917);
+  text-align: center;
+  margin: 0 0 var(--spacing-4, 1rem) 0;
+}
+
+.ragg-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-4, 1rem);
+}
+
+.ragg-legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2, 0.5rem);
+  text-align: center;
+}
+
+.ragg-color-badge {
+  padding: var(--spacing-2, 0.5rem) var(--spacing-4, 1rem);
+  border-radius: var(--radius-lg, 0.75rem);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 700;
+  color: white;
+  min-width: 80px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ragg-meaning {
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--text-secondary, #44403C);
+  line-height: 1.4;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .ragg-legend-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .evaluation-2-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4, 1rem);
+  }
+
+  .evaluation-2-card {
+    padding: var(--spacing-5, 1.25rem);
+  }
+
+  .eval-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .eval-card-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .ragg-legend-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3, 0.75rem);
+  }
+
+  .ragg-color-badge {
+    min-width: 70px;
+    padding: var(--spacing-2, 0.5rem) var(--spacing-3, 0.75rem);
+  }
+}

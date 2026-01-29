@@ -1,0 +1,157 @@
+/* ========================================
+   Key Learnings - What Didn't Work
+   ======================================== */
+
+.key-learnings-didnt-work-slide {
+  /* Uses slide-base styles */
+}
+
+.didnt-work-content {
+  max-width: 1200px;
+}
+
+.didnt-work-header {
+  text-align: center;
+  margin-bottom: var(--spacing-6, 1.5rem);
+}
+
+.didnt-work-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl, 1rem);
+  background: linear-gradient(135deg, #F97316, #EA580C);
+  color: white;
+  margin-bottom: var(--spacing-4, 1rem);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+}
+
+.didnt-work-badge svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* ========================================
+   Cards Grid
+   ======================================== */
+
+.didnt-work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-5, 1.25rem);
+}
+
+.didnt-work-card {
+  padding: var(--spacing-5, 1.25rem);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl, 1rem);
+  border: 1px solid rgba(249, 115, 22, 0.15);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: all var(--duration-normal, 300ms) var(--ease-spring);
+}
+
+.didnt-work-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(249, 115, 22, 0.1);
+}
+
+.didnt-work-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3, 0.75rem);
+  margin-bottom: var(--spacing-4, 1rem);
+  padding-bottom: var(--spacing-3, 0.75rem);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.didnt-work-card-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(249, 115, 22, 0.1);
+  border-radius: var(--radius-lg, 0.75rem);
+  color: #EA580C;
+}
+
+.didnt-work-card-problem {
+  font-size: var(--font-size-lg, 1.125rem);
+  font-weight: 700;
+  color: var(--text-primary, #1C1917);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.didnt-work-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3, 0.75rem);
+}
+
+.impact-row,
+.solution-row {
+  display: flex;
+  gap: var(--spacing-2, 0.5rem);
+  align-items: flex-start;
+}
+
+.row-label {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--text-tertiary, #78716C);
+  flex-shrink: 0;
+  min-width: 70px;
+}
+
+.row-value {
+  font-size: var(--font-size-sm, 0.875rem);
+  line-height: 1.5;
+}
+
+.row-value.impact {
+  color: #DC2626;
+}
+
+.row-value.solution {
+  color: #059669;
+  font-weight: 500;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+  .didnt-work-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4, 1rem);
+  }
+
+  .didnt-work-card {
+    padding: var(--spacing-4, 1rem);
+  }
+
+  .didnt-work-badge {
+    width: 56px;
+    height: 56px;
+  }
+
+  .didnt-work-badge svg {
+    width: 28px;
+    height: 28px;
+  }
+}

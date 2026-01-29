@@ -6,15 +6,20 @@ import TitleSlide from './components/TitleSlide'
 import MissionVisionSlide from './components/MissionVisionSlide'
 import ValuesSlide from './components/ValuesSlide'
 import KeyChangesSlide from './components/KeyChangesSlide'
-import StrategyReviewSlide from './components/StrategyReviewSlide'
+import BrandingExpansionSlide from './components/BrandingExpansionSlide'
 import AlignmentSlide from './components/AlignmentSlide'
+import StrategyReviewSlide from './components/StrategyReviewSlide'
 import TeamFunctionSlide from './components/TeamFunctionSlide'
+import ToolsSlide from './components/ToolsSlide'
 import DepartmentTargetsIntroSlide from './components/DepartmentTargetsIntroSlide'
 import FinanceSlide from './components/FinanceSlide'
 import BusinessDevelopmentSlide from './components/BusinessDevelopmentSlide'
 import SustainabilitySlide from './components/SustainabilitySlide'
 import CommunitySlide from './components/CommunitySlide'
-import KeyLearningsSlide from './components/KeyLearningsSlide'
+import NewAdditionalTargetsSlide from './components/NewAdditionalTargetsSlide'
+import KeyLearningsStoppedSlide from './components/KeyLearningsStoppedSlide'
+import KeyLearningsDidntWorkSlide from './components/KeyLearningsDidntWorkSlide'
+import KeyLearningsBehaviourSlide from './components/KeyLearningsBehaviourSlide'
 import EvaluationProcessSlide from './components/EvaluationProcessSlide'
 import FuturePrioritiesSlide from './components/FuturePrioritiesSlide'
 import './App.css'
@@ -25,26 +30,31 @@ gsap.registerPlugin(ScrollTrigger)
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const slides = [
-    { component: TitleSlide, id: 'title' },
-    { component: MissionVisionSlide, id: 'mission-vision' },
-    { component: ValuesSlide, id: 'values' },
-    { component: KeyChangesSlide, id: 'key-changes' },
-    { component: StrategyReviewSlide, id: 'strategy-review' },
-    { component: AlignmentSlide, id: 'alignment' },
-    { component: TeamFunctionSlide, id: 'team-function' },
-    { component: DepartmentTargetsIntroSlide, id: 'department-targets-intro' },
-    { component: FinanceSlide, id: 'finance' },
-    { component: BusinessDevelopmentSlide, id: 'business-development' },
-    { component: SustainabilitySlide, id: 'sustainability' },
-    { component: CommunitySlide, id: 'community' },
-    { component: KeyLearningsSlide, id: 'key-learnings' },
-    { component: EvaluationProcessSlide, id: 'evaluation-process' },
-    { component: FuturePrioritiesSlide, id: 'future-priorities' },
+    { component: TitleSlide, id: 'title' },                                    // 0
+    { component: MissionVisionSlide, id: 'mission-vision' },                   // 1
+    { component: ValuesSlide, id: 'values' },                                  // 2
+    { component: KeyChangesSlide, id: 'key-changes' },                         // 3
+    { component: BrandingExpansionSlide, id: 'branding-expansion' },           // 4
+    { component: AlignmentSlide, id: 'alignment' },                            // 5
+    { component: TeamFunctionSlide, id: 'team-function' },                     // 6
+    { component: ToolsSlide, id: 'tools' },                                    // 7
+    { component: StrategyReviewSlide, id: 'strategy-review' },                 // 8 (Department RAGG Ratings)
+    { component: DepartmentTargetsIntroSlide, id: 'department-targets-intro' },// 9 (includes RAGG legend)
+    { component: FinanceSlide, id: 'finance' },                                // 10
+    { component: BusinessDevelopmentSlide, id: 'business-development' },       // 11
+    { component: SustainabilitySlide, id: 'sustainability' },                  // 12
+    { component: CommunitySlide, id: 'community' },                            // 13
+    { component: NewAdditionalTargetsSlide, id: 'new-additional-targets' },    // 14
+    { component: KeyLearningsStoppedSlide, id: 'key-learnings-stopped' },      // 15
+    { component: KeyLearningsDidntWorkSlide, id: 'key-learnings-didnt-work' }, // 16
+    { component: KeyLearningsBehaviourSlide, id: 'key-learnings-behaviour' },  // 17
+    { component: EvaluationProcessSlide, id: 'evaluation-process' },           // 18
+    { component: FuturePrioritiesSlide, id: 'future-priorities' },             // 19
   ]
 
-  // Determine if we're in department slides section (indices 7-11)
-  const departmentStartIndex = 7
-  const departmentEndIndex = 11 // Community is the last department slide
+  // Determine if we're in department slides section (indices 9-13)
+  const departmentStartIndex = 9
+  const departmentEndIndex = 13 // Community is the last department slide
   const isDepartmentSlide = currentSlide >= departmentStartIndex && currentSlide <= departmentEndIndex
 
   // Slide transition animation - using translate3d for GPU acceleration

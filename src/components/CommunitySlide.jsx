@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useSpring, animated } from '@react-spring/web'
 import { gsap } from 'gsap'
 import { GradientMesh } from './effects'
+import eventsImg from '../assets/events-ran-by-team.png'
 import '../styles/slide-base.css'
 import './CommunitySlide.css'
 
@@ -44,7 +45,7 @@ function CommunitySlide({ slideIndex }) {
 
   const sections = [
     {
-      title: 'Goal',
+      title: 'Previous Target',
       icon: '🎯',
       content: [
         'Deliver meaningful community events that support TE learning'
@@ -70,13 +71,13 @@ function CommunitySlide({ slideIndex }) {
       accentColor: '#8B5CF6'
     },
     {
-      title: 'What Changed',
+      title: 'Improvements to Target',
       icon: '🚀',
       content: [
-        'Increased ambition from three to four events per term',
-        'Raised minimum attendance thresholds',
-        'Strengthened post-event surveys to evidence applied learning',
-        'Used GOLD to trigger stretch goals rather than complacency'
+        'Four events per term (increased from three)',
+        'Higher minimum attendance thresholds',
+        'Post-event surveys evidencing applied learning',
+        'Stretch goals triggered by GOLD status'
       ],
       accentColor: '#F59E0B'
     }
@@ -127,6 +128,13 @@ function CommunitySlide({ slideIndex }) {
             </div>
           ))}
         </animated.div>
+
+        {/* Events Chart */}
+        <div className="community-chart-section">
+          <div className="chart-card">
+            <img src={eventsImg} alt="Events Ran per Term" />
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -44,7 +44,7 @@ function BusinessDevelopmentSlide({ slideIndex }) {
 
   const sections = [
     {
-      title: 'Goal',
+      title: 'Previous Target',
       icon: '🎯',
       content: [
         'Build data-driven customer acquisition frameworks and strengthen external engagement'
@@ -70,13 +70,13 @@ function BusinessDevelopmentSlide({ slideIndex }) {
       accentColor: '#8B5CF6'
     },
     {
-      title: 'What Changed',
+      title: 'Improvements to Target',
       icon: '🚀',
       content: [
-        'Redesigned goals using SWOT → TOWS',
-        'Introduced minimum tracking standards and clearer success metrics',
-        'Assigned ownership through a dedicated working group',
-        'Used RED deliberately to force clarity and accountability'
+        'Goals redesigned using SWOT → TOWS methodology',
+        'Minimum tracking standards with clear success metrics',
+        'Dedicated working group with assigned ownership',
+        'Data-driven customer acquisition with measurable ROI'
       ],
       accentColor: '#EF4444'
     }

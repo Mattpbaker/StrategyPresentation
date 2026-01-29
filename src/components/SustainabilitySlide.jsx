@@ -44,7 +44,7 @@ function SustainabilitySlide({ slideIndex }) {
 
   const sections = [
     {
-      title: 'Goal',
+      title: 'Previous Target',
       icon: '🎯',
       content: [
         'Reduce environmental impact and strengthen wellbeing across the team'
@@ -70,13 +70,13 @@ function SustainabilitySlide({ slideIndex }) {
       accentColor: '#8B5CF6'
     },
     {
-      title: 'What Changed',
+      title: 'Improvements to Target',
       icon: '🚀',
       content: [
-        'Shifted sustainability from individual behaviour to venture-level outputs',
-        'Required all ventures to complete a Sustainability Audit and implement one impact action by April 2026',
-        'Introduced a Venture Impact Tracker covering environmental and social impact',
-        'Moved from individual wellbeing tracking to a Team Resilience model'
+        'Venture-level sustainability outputs (not just individual behaviour)',
+        'Sustainability Audit completed with one impact action by April 2026',
+        'Venture Impact Tracker for environmental and social impact',
+        'Team Resilience model replacing individual wellbeing tracking'
       ],
       accentColor: '#F97316'
     }
