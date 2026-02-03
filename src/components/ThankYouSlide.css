@@ -245,32 +245,3 @@
     font-size: var(--font-size-lg, 1.125rem);
   }
 }
-
-/* ========================================
-   Presentation Mode - 6-7m Viewing Distance
-   ======================================== */
-
-@media (min-width: 1920px) {
-  .thank-you-title {
-    font-size: clamp(6rem, 12vw, 14rem);  /* Max ~224px */
-    letter-spacing: -0.04em;
-  }
-
-  .thank-you-subtitle {
-    font-size: var(--font-size-3xl);       /* 72px */
-    margin-top: var(--spacing-6);
-  }
-
-  .thank-you-logo-image {
-    height: 320px;
-    min-height: 320px;
-  }
-
-  .thank-you-logo-wrapper {
-    margin-bottom: var(--spacing-6);
-  }
-
-  .thank-you-content {
-    padding: var(--spacing-6);
-  }
-}

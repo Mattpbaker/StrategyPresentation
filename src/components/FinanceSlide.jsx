@@ -7,7 +7,7 @@ import netProfitImg from '../assets/net-profit-margin.png'
 import '../styles/slide-base.css'
 import './FinanceSlide.css'
 
-function FinanceSlide({ slideIndex }) {
+function FinanceSlide({ slideIndex, chartFocus = false }) {
   const containerRef = useRef(null)
   const sectionsRef = useRef([])
 
@@ -24,6 +24,13 @@ function FinanceSlide({ slideIndex }) {
     to: { opacity: 1, y: 0 },
     delay: 400,
     config: { tension: 180, friction: 40 }
+  })
+
+  // Chart focus overlay animation
+  const chartOverlaySpring = useSpring({
+    opacity: chartFocus ? 1 : 0,
+    scale: chartFocus ? 1 : 0.8,
+    config: { tension: 200, friction: 30 }
   })
 
   // GSAP animations - only run once when slide becomes visible
@@ -141,6 +148,25 @@ function FinanceSlide({ slideIndex }) {
           </div>
         </div>
       </div>
+
+      {/* Chart Focus Overlay */}
+      <animated.div
+        className="chart-focus-overlay"
+        style={{
+          opacity: chartOverlaySpring.opacity,
+          transform: chartOverlaySpring.scale.to(s => `scale(${s})`),
+          pointerEvents: chartFocus ? 'auto' : 'none'
+        }}
+      >
+        <div className="chart-focus-container">
+          <div className="chart-focus-card">
+            <img src={totalRevenueImg} alt="Total Revenue Chart" />
+          </div>
+          <div className="chart-focus-card">
+            <img src={netProfitImg} alt="Net Profit Margin Chart" />
+          </div>
+        </div>
+      </animated.div>
     </div>
   )
 }

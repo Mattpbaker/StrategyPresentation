@@ -306,3 +306,23 @@
     display: none;
   }
 }
+
+/* ========================================
+   Presentation Mode - Uniform Proportional Scaling
+   For viewing at 6-7 meters distance
+   ======================================== */
+
+@media (min-width: 1920px) {
+  .slide-wrapper {
+    transform: scale(1.5);
+    transform-origin: center center;
+    overflow: hidden;
+  }
+}
+
+/* Larger scaling for 4K displays */
+@media (min-width: 3840px) {
+  .slide-wrapper {
+    transform: scale(2);
+  }
+}

@@ -44,10 +44,12 @@ function BusinessDevelopmentSlide({ slideIndex }) {
 
   const sections = [
     {
-      title: 'Previous Target',
+      title: 'Previous Targets',
       icon: '🎯',
       content: [
-        'Build data-driven customer acquisition frameworks and strengthen external engagement'
+        'Build data-driven acquisition frameworks achieving 80% target metrics across ventures',
+        'Drive measurable growth through 50+ external organisation engagements annually',
+        'Implement marketing plans with tracking systems for all ventures/projects'
       ],
       accentColor: '#3B82F6'
     },

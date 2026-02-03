@@ -35,8 +35,11 @@ function MissionVisionSlide({ slideIndex }) {
 
       {/* Content */}
       <div className="slide-content mission-vision-content">
-        <div className="slide-header">
-          <h1 className="slide-title">Our Mission & Vision</h1>
+        <div className="slide-header mission-vision-header">
+          <div className="mission-vision-title-wrapper">
+            <h1 className="slide-title">Our Mission & Vision</h1>
+            <div className="mission-vision-badge green">GREEN</div>
+          </div>
         </div>
 
         <div className="mission-vision-grid">

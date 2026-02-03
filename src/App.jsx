@@ -29,6 +29,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [financeChartFocus, setFinanceChartFocus] = useState(false)
   const slides = [
     { component: TitleSlide, id: 'title' },                                    // 0
     { component: MissionVisionSlide, id: 'mission-vision' },                   // 1
@@ -93,12 +94,32 @@ function App() {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyPress = (e) => {
+      const financeSlideIndex = 9
+
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        // Special handling for Finance slide - show chart focus first
+        if (currentSlide === financeSlideIndex && !financeChartFocus) {
+          setFinanceChartFocus(true)
+          return
+        }
+
+        // If in chart focus, exit it and advance
+        if (currentSlide === financeSlideIndex && financeChartFocus) {
+          setFinanceChartFocus(false)
+        }
+
         if (currentSlide < slides.length - 1) {
           setCurrentSlide(prev => prev + 1)
         }
       }
+
       if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        // If in chart focus, first press exits focus mode
+        if (financeChartFocus) {
+          setFinanceChartFocus(false)
+          return
+        }
+
         if (currentSlide > 0) {
           setCurrentSlide(prev => prev - 1)
         }
@@ -107,7 +128,7 @@ function App() {
 
     window.addEventListener('keydown', handleKeyPress)
     return () => window.removeEventListener('keydown', handleKeyPress)
-  }, [currentSlide, slides.length])
+  }, [currentSlide, slides.length, financeChartFocus])
 
   return (
     <div className="app">
@@ -138,7 +159,10 @@ function App() {
                   left: `${index * 100}vw`
                 } : {}}
               >
-                <Component slideIndex={index} />
+                <Component
+                  slideIndex={index}
+                  chartFocus={index === 9 ? financeChartFocus : undefined}
+                />
               </div>
             )
           })

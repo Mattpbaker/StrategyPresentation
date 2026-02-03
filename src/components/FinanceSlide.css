@@ -382,64 +382,72 @@
 }
 
 /* ========================================
-   Presentation Mode - 6-7m Viewing Distance
+   Chart Focus Overlay
+   Full-screen view of KPI charts
    ======================================== */
 
-@media (min-width: 1920px) {
-  .finance-content {
-    padding: 0.75rem 1.5rem;
-    gap: 0.5rem;
+.chart-focus-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(250, 250, 249, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.chart-focus-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 90%;
+  max-height: 85%;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-focus-card {
+  background: white;
+  border-radius: var(--radius-xl, 1rem);
+  padding: 1.5rem;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.chart-focus-card img {
+  max-height: 65vh;
+  max-width: 40vw;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+}
+
+/* Responsive for chart focus */
+@media (max-width: 1024px) {
+  .chart-focus-container {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
-  .finance-slide .section-title {
-    font-size: var(--font-size-xl);        /* 44px */
+  .chart-focus-card img {
+    max-height: 35vh;
+    max-width: 80vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-focus-card {
+    padding: 1rem;
   }
 
-  .finance-slide .section-content-item {
-    font-size: var(--font-size-base);      /* 32px */
-    line-height: 1.4;
-  }
-
-  .finance-slide .section-icon-wrapper {
-    width: var(--icon-size-lg);
-    height: var(--icon-size-lg);
-  }
-
-  .finance-slide .section-header {
-    margin-bottom: var(--spacing-3);
-    padding-bottom: var(--spacing-2);
-    gap: var(--spacing-3);
-  }
-
-  .finance-section-card {
-    padding: var(--spacing-4);
-    min-height: auto;
-  }
-
-  .finance-sections {
-    gap: var(--spacing-3);
-  }
-
-  .finance-badge {
-    font-size: var(--font-size-sm);
-    padding: 0.625rem 1.25rem;
-  }
-
-  .finance-slide .section-content-list {
-    gap: var(--spacing-2);
-  }
-
-  .finance-charts-row {
-    gap: var(--spacing-3);
-    margin-top: var(--spacing-3);
-  }
-
-  .finance-slide .chart-card {
-    max-height: 200px;
-    padding: 0.75rem;
-  }
-
-  .finance-slide .chart-card img {
-    max-height: 180px;
+  .chart-focus-card img {
+    max-height: 30vh;
+    max-width: 85vw;
   }
 }

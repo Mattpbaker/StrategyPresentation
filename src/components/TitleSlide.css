@@ -283,32 +283,3 @@
     display: none;
   }
 }
-
-/* ========================================
-   Presentation Mode - 6-7m Viewing Distance
-   ======================================== */
-
-@media (min-width: 1920px) {
-  .presentation-title {
-    font-size: clamp(5rem, 10vw, 11rem);  /* Max ~176px */
-    letter-spacing: -0.04em;
-  }
-
-  .presentation-subtitle {
-    font-size: var(--font-size-2xl);       /* 56px */
-    margin-top: var(--spacing-6);
-  }
-
-  .apollo-logo-image {
-    height: 400px;
-    min-height: 400px;
-  }
-
-  .logo-wrapper {
-    margin-bottom: var(--spacing-6);
-  }
-
-  .centered-content {
-    padding: var(--spacing-6);
-  }
-}
