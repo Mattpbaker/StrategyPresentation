@@ -1,9 +1,9 @@
 /* ========================================
-   Title Slide - 2025/2026 Update
-   Hero layout with asymmetric floating accents
+   Thank You Slide
+   Simple centered layout with animations
    ======================================== */
 
-.title-slide {
+.thank-you-slide {
   width: 100%;
   height: 100%;
   display: flex;
@@ -21,10 +21,10 @@
 }
 
 /* ========================================
-   Decorative Floating Shapes (Asymmetric)
+   Decorative Floating Shapes
    ======================================== */
 
-.title-slide::before {
+.thank-you-slide::before {
   content: '';
   position: absolute;
   top: -15%;
@@ -42,7 +42,7 @@
   pointer-events: none;
 }
 
-.title-slide::after {
+.thank-you-slide::after {
   content: '';
   position: absolute;
   bottom: -20%;
@@ -69,8 +69,8 @@
   }
 }
 
-/* Additional accent shape */
-.title-accent-shape {
+/* Additional accent shapes */
+.thank-you-accent-shape {
   position: absolute;
   width: 300px;
   height: 300px;
@@ -79,7 +79,7 @@
   opacity: 0.5;
 }
 
-.title-accent-shape-1 {
+.thank-you-accent-shape-1 {
   top: 20%;
   left: 10%;
   background: radial-gradient(
@@ -90,7 +90,7 @@
   animation: floatSlow 20s ease-in-out infinite;
 }
 
-.title-accent-shape-2 {
+.thank-you-accent-shape-2 {
   bottom: 25%;
   right: 15%;
   width: 200px;
@@ -104,37 +104,10 @@
 }
 
 /* ========================================
-   Smoke / Particle Container
-   ======================================== */
-
-.particles-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.smoke-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  filter: blur(6px);
-  -webkit-filter: blur(6px);
-  opacity: 0.8;
-}
-
-/* ========================================
    Centered Content
    ======================================== */
 
-.centered-content {
+.thank-you-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,13 +118,14 @@
   height: 100%;
   padding: var(--spacing-8, 2rem);
   box-sizing: border-box;
+  text-align: center;
 }
 
 /* ========================================
    Logo
    ======================================== */
 
-.logo-wrapper {
+.thank-you-logo-wrapper {
   margin-bottom: var(--spacing-8, 2rem);
   display: flex;
   align-items: center;
@@ -163,8 +137,8 @@
   will-change: transform;
 }
 
-.apollo-logo-image {
-  height: 280px;
+.thank-you-logo-image {
+  height: 200px;
   width: auto;
   max-width: 90%;
   object-fit: contain;
@@ -174,14 +148,14 @@
   visibility: visible !important;
   opacity: 1 !important;
   flex-shrink: 0;
-  min-height: 280px;
+  min-height: 200px;
   image-rendering: -webkit-optimize-contrast;
   position: relative;
   z-index: 100;
   transition: filter var(--duration-normal, 300ms) ease;
 }
 
-.apollo-logo-image:hover {
+.thank-you-logo-image:hover {
   filter: drop-shadow(0 16px 40px rgba(124, 58, 237, 0.2));
 }
 
@@ -189,8 +163,8 @@
    Title Typography
    ======================================== */
 
-.presentation-title {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+.thank-you-title {
+  font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
   color: var(--text-primary, #1C1917);
   margin: 0;
@@ -202,41 +176,25 @@
   position: relative;
   z-index: 12;
   line-height: 1.1;
-}
-
-/* Optional gradient variant */
-.presentation-title-gradient {
   background: linear-gradient(
     135deg,
-    var(--apollo-pink, #DB2777) 0%,
-    var(--apollo-purple, #7C3AED) 100%
+    var(--apollo-purple, #7C3AED) 0%,
+    var(--apollo-pink, #DB2777) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 4px 12px rgba(124, 58, 237, 0.15));
 }
 
 /* Subtitle */
-.presentation-subtitle {
-  font-size: var(--font-size-xl, 1.25rem);
+.thank-you-subtitle {
+  font-size: var(--font-size-2xl, 1.5rem);
   color: var(--text-secondary, #44403C);
   margin-top: var(--spacing-4, 1rem);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.02em;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.5s forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  position: relative;
+  z-index: 12;
 }
 
 /* ========================================
@@ -244,23 +202,23 @@
    ======================================== */
 
 @media (max-width: 968px) {
-  .apollo-logo-image {
-    height: 200px;
-    min-height: 200px;
+  .thank-you-logo-image {
+    height: 160px;
+    min-height: 160px;
   }
 
-  .logo-wrapper {
+  .thank-you-logo-wrapper {
     margin-bottom: var(--spacing-6, 1.5rem);
   }
 
-  .title-slide::before {
+  .thank-you-slide::before {
     width: 400px;
     height: 400px;
     top: -10%;
     right: -15%;
   }
 
-  .title-slide::after {
+  .thank-you-slide::after {
     width: 350px;
     height: 350px;
     bottom: -15%;
@@ -269,18 +227,22 @@
 }
 
 @media (max-width: 480px) {
-  .apollo-logo-image {
-    height: 150px;
-    min-height: 150px;
+  .thank-you-logo-image {
+    height: 120px;
+    min-height: 120px;
   }
 
-  .centered-content {
+  .thank-you-content {
     padding: var(--spacing-4, 1rem);
   }
 
-  .title-accent-shape-1,
-  .title-accent-shape-2 {
+  .thank-you-accent-shape-1,
+  .thank-you-accent-shape-2 {
     display: none;
+  }
+
+  .thank-you-subtitle {
+    font-size: var(--font-size-lg, 1.125rem);
   }
 }
 
@@ -289,26 +251,26 @@
    ======================================== */
 
 @media (min-width: 1920px) {
-  .presentation-title {
-    font-size: clamp(5rem, 10vw, 11rem);  /* Max ~176px */
+  .thank-you-title {
+    font-size: clamp(6rem, 12vw, 14rem);  /* Max ~224px */
     letter-spacing: -0.04em;
   }
 
-  .presentation-subtitle {
-    font-size: var(--font-size-2xl);       /* 56px */
+  .thank-you-subtitle {
+    font-size: var(--font-size-3xl);       /* 72px */
     margin-top: var(--spacing-6);
   }
 
-  .apollo-logo-image {
-    height: 400px;
-    min-height: 400px;
+  .thank-you-logo-image {
+    height: 320px;
+    min-height: 320px;
   }
 
-  .logo-wrapper {
+  .thank-you-logo-wrapper {
     margin-bottom: var(--spacing-6);
   }
 
-  .centered-content {
+  .thank-you-content {
     padding: var(--spacing-6);
   }
 }

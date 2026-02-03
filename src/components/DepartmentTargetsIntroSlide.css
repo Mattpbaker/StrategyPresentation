@@ -22,7 +22,7 @@
 .intro-card {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px) saturate(180%);
-  border-radius: 24px;
+  border-radius: var(--radius-2xl, 1.5rem);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.1),
@@ -103,14 +103,14 @@
 }
 
 .feature-icon {
-  width: 80px;
-  height: 80px;
+  width: var(--icon-size-xl, 64px);
+  height: var(--icon-size-xl, 64px);
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
+  border-radius: var(--radius-xl, 1rem);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 
     0 4px 16px rgba(0, 0, 0, 0.08),
@@ -120,8 +120,8 @@
 }
 
 .feature-icon svg {
-  width: 32px;
-  height: 32px;
+  width: var(--icon-svg-xl, 32px);
+  height: var(--icon-svg-xl, 32px);
   stroke-width: 2;
 }
 
@@ -146,9 +146,9 @@
 
 /* RAGG Rating Legend */
 .ragg-rating-legend {
-  padding: 1.5rem;
+  padding: var(--spacing-6, 1.5rem);
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 16px;
+  border-radius: var(--radius-xl, 1rem);
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -176,9 +176,9 @@
 }
 
 .ragg-badge {
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
+  padding: var(--spacing-2, 0.5rem) var(--spacing-4, 1rem);
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: var(--font-size-sm, 0.875rem);
   font-weight: 700;
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -247,5 +247,79 @@
   .intro-features {
     flex-direction: column;
     gap: 1.5rem;
+  }
+}
+
+/* ========================================
+   Presentation Mode - 6-7m Viewing Distance
+   ======================================== */
+
+@media (min-width: 1920px) {
+  .intro-title {
+    font-size: 7rem;                       /* ~112px */
+  }
+
+  .intro-description {
+    font-size: var(--font-size-xl);        /* 44px */
+    line-height: 1.6;
+  }
+
+  .intro-card {
+    padding: 3rem 2.5rem;
+    max-width: 1000px;
+  }
+
+  .intro-header {
+    margin-bottom: 2rem;
+  }
+
+  .intro-body {
+    gap: 2rem;
+  }
+
+  .feature-text {
+    font-size: var(--font-size-lg);        /* 36px */
+    max-width: 220px;
+  }
+
+  .feature-icon {
+    width: var(--icon-size-xl);
+    height: var(--icon-size-xl);
+  }
+
+  .feature-icon svg {
+    width: var(--icon-svg-xl);
+    height: var(--icon-svg-xl);
+  }
+
+  .intro-features {
+    gap: 2.5rem;
+  }
+
+  .feature-item {
+    gap: 0.5rem;
+  }
+
+  .ragg-legend-heading {
+    font-size: var(--font-size-lg);        /* 36px */
+  }
+
+  .ragg-badge {
+    font-size: var(--font-size-base);      /* 32px */
+    padding: var(--spacing-3) var(--spacing-5);
+    min-width: 120px;
+  }
+
+  .ragg-badge-meaning {
+    font-size: var(--font-size-sm);        /* 28px */
+    max-width: 160px;
+  }
+
+  .ragg-badges-grid {
+    gap: 2rem;
+  }
+
+  .ragg-rating-legend {
+    padding: var(--spacing-4);
   }
 }

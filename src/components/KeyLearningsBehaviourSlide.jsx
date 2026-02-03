@@ -44,7 +44,7 @@ function KeyLearningsBehaviourSlide({ slideIndex }) {
     },
     {
       before: 'Unclear ownership',
-      after: 'Clear ownership of strategy areas',
+      after: 'Roles and responsibility assigned',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>

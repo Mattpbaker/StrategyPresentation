@@ -33,7 +33,7 @@
 .changes-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
+  gap: var(--spacing-4, 1rem);
   width: 100%;
   align-items: stretch;
 }
@@ -110,14 +110,14 @@
 }
 
 .key-changes-slide .change-card.featured .change-icon-wrapper {
-  width: 48px;
-  height: 48px;
+  width: var(--icon-size-md, 48px);
+  height: var(--icon-size-md, 48px);
   margin-bottom: var(--spacing-3, 0.75rem);
 }
 
 .key-changes-slide .change-card.featured .change-icon svg {
-  width: 24px;
-  height: 24px;
+  width: var(--icon-svg-md, 24px);
+  height: var(--icon-svg-md, 24px);
 }
 
 .key-changes-slide .change-card.featured .change-title {
@@ -139,14 +139,14 @@
 }
 
 .key-changes-slide .change-card.standard .change-icon-wrapper {
-  width: 40px;
-  height: 40px;
+  width: var(--icon-size-sm, 36px);
+  height: var(--icon-size-sm, 36px);
   margin-bottom: var(--spacing-2, 0.5rem);
 }
 
 .key-changes-slide .change-card.standard .change-icon svg {
-  width: 20px;
-  height: 20px;
+  width: var(--icon-svg-sm, 20px);
+  height: var(--icon-svg-sm, 20px);
 }
 
 .key-changes-slide .change-card.standard .change-title {
@@ -164,8 +164,8 @@
 .key-changes-slide .change-icon-wrapper {
   position: relative;
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
+  width: var(--icon-size-sm, 36px);
+  height: var(--icon-size-sm, 36px);
   border-radius: var(--radius-lg, 0.75rem);
   display: flex;
   align-items: center;
@@ -276,5 +276,61 @@
 
   .key-changes-slide .change-description {
     font-size: var(--font-size-sm, 0.875rem);
+  }
+}
+
+/* ========================================
+   Presentation Mode - 6-7m Viewing Distance
+   ======================================== */
+
+@media (min-width: 1920px) {
+  .key-changes-slide .key-changes-content {
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+
+  .key-changes-slide .change-card.featured .change-title {
+    font-size: var(--font-size-xl);        /* 44px */
+  }
+
+  .key-changes-slide .change-card.featured .change-description {
+    font-size: var(--font-size-lg);        /* 36px */
+  }
+
+  .key-changes-slide .change-card.standard .change-title {
+    font-size: var(--font-size-lg);        /* 36px */
+  }
+
+  .key-changes-slide .change-card.standard .change-description {
+    font-size: var(--font-size-base);      /* 32px */
+  }
+
+  .key-changes-slide .change-card.featured {
+    padding: 1rem;
+    min-height: 220px;
+  }
+
+  .key-changes-slide .change-card.standard {
+    padding: 0.75rem;
+  }
+
+  .key-changes-slide .change-icon-wrapper {
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+  }
+
+  .key-changes-slide .change-card.featured .change-icon-wrapper {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+    margin-bottom: var(--spacing-3);
+  }
+
+  .key-changes-slide .change-icon svg {
+    width: var(--icon-svg-md);
+    height: var(--icon-svg-md);
+  }
+
+  .key-changes-slide .changes-grid {
+    gap: var(--spacing-3);
   }
 }

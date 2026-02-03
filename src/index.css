@@ -99,6 +99,23 @@
   --radius-3xl: 2rem;
   --radius-full: 9999px;
 
+  /* Icon Size Scale */
+  --icon-size-sm: 36px;
+  --icon-size-md: 48px;
+  --icon-size-lg: 56px;
+  --icon-size-xl: 64px;
+
+  --icon-svg-sm: 20px;
+  --icon-svg-md: 24px;
+  --icon-svg-lg: 28px;
+  --icon-svg-xl: 32px;
+
+  /* Line Heights */
+  --line-height-tight: 1.3;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
@@ -115,6 +132,51 @@
   --duration-fast: 150ms;
   --duration-normal: 300ms;
   --duration-slow: 500ms;
+}
+
+/* ========================================
+   Presentation Mode - Large Screen Scaling
+   For viewing at 6-7 meters distance
+   Applies to 1080p+ displays (1920px width)
+   ======================================== */
+
+@media (min-width: 1920px) {
+  :root {
+    /* Typography Scale - 2x increase for distant viewing */
+    --font-size-xs: 1.25rem;      /* 12px → 20px */
+    --font-size-sm: 1.75rem;      /* 14px → 28px */
+    --font-size-base: 2rem;       /* 16px → 32px */
+    --font-size-lg: 2.25rem;      /* 18px → 36px */
+    --font-size-xl: 2.75rem;      /* 20px → 44px */
+    --font-size-2xl: 3.5rem;      /* 24px → 56px */
+    --font-size-3xl: 4.5rem;      /* 30px → 72px */
+    --font-size-4xl: 5.5rem;      /* 36px → 88px */
+    --font-size-5xl: 7rem;        /* 48px → 112px */
+    --font-size-6xl: 9rem;        /* 60px → 144px */
+    --font-size-7xl: 11rem;       /* 72px → 176px */
+    --font-size-8xl: 14rem;       /* 96px → 224px */
+
+    /* Icon Scale - 1.75x increase */
+    --icon-size-sm: 63px;         /* 36px → 63px */
+    --icon-size-md: 84px;         /* 48px → 84px */
+    --icon-size-lg: 98px;         /* 56px → 98px */
+    --icon-size-xl: 112px;        /* 64px → 112px */
+
+    --icon-svg-sm: 35px;          /* 20px → 35px */
+    --icon-svg-md: 42px;          /* 24px → 42px */
+    --icon-svg-lg: 49px;          /* 28px → 49px */
+    --icon-svg-xl: 56px;          /* 32px → 56px */
+
+    /* Spacing - Reduced to compensate for larger text */
+    --spacing-3: 0.5rem;          /* 0.75rem → 0.5rem */
+    --spacing-4: 0.75rem;         /* 1rem → 0.75rem */
+    --spacing-5: 1rem;            /* 1.25rem → 1rem */
+    --spacing-6: 1.25rem;         /* 1.5rem → 1.25rem */
+    --spacing-8: 1.5rem;          /* 2rem → 1.5rem */
+    --spacing-10: 1.75rem;        /* 2.5rem → 1.75rem */
+    --spacing-12: 2rem;           /* 3rem → 2rem */
+    --spacing-16: 2.5rem;         /* 4rem → 2.5rem */
+  }
 }
 
 * {

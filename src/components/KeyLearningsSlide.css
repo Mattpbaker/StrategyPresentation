@@ -108,8 +108,8 @@
 .key-learnings-section-card .section-icon-wrapper {
   position: relative;
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: var(--icon-size-md, 48px);
+  height: var(--icon-size-md, 48px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,8 +120,8 @@
 }
 
 .key-learnings-section-card .section-icon-wrapper svg {
-  width: 24px;
-  height: 24px;
+  width: var(--icon-svg-md, 24px);
+  height: var(--icon-svg-md, 24px);
   stroke-width: 2;
 }
 
@@ -132,7 +132,7 @@
   margin: 0;
   letter-spacing: -0.01em;
   flex: 1;
-  line-height: 1.4;
+  line-height: var(--line-height-tight, 1.3);
 }
 
 /* ========================================
@@ -151,9 +151,9 @@
 
 .key-learnings-section-card .section-content-item {
   font-size: var(--font-size-sm, 0.875rem);
-  line-height: 1.65;
+  line-height: var(--line-height-relaxed, 1.6);
   color: var(--text-secondary, #44403C);
-  padding-left: var(--spacing-5, 1.25rem);
+  padding-left: var(--spacing-4, 1rem);
   position: relative;
   letter-spacing: 0.01em;
 }
@@ -220,5 +220,54 @@
 
   .key-learnings-section-card .section-content-item {
     font-size: var(--font-size-sm, 0.875rem);
+  }
+}
+
+/* ========================================
+   Presentation Mode - 6-7m Viewing Distance
+   ======================================== */
+
+@media (min-width: 1920px) {
+  .key-learnings-content {
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+
+  .key-learnings-section-card .section-title {
+    font-size: var(--font-size-xl);        /* 44px */
+  }
+
+  .key-learnings-section-card .section-content-item {
+    font-size: var(--font-size-base);      /* 32px */
+    line-height: 1.4;
+  }
+
+  .key-learnings-section-card {
+    min-height: 320px;
+    padding: var(--spacing-5);
+  }
+
+  .key-learnings-section-card .section-icon-wrapper {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+  }
+
+  .key-learnings-section-card .section-icon-wrapper svg {
+    width: var(--icon-svg-lg);
+    height: var(--icon-svg-lg);
+  }
+
+  .key-learnings-section-card .section-header {
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-3);
+    padding-bottom: var(--spacing-2);
+  }
+
+  .key-learnings-section-card .section-content-list {
+    gap: var(--spacing-2);
+  }
+
+  .key-learnings-sections {
+    gap: var(--spacing-4);
   }
 }

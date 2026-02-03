@@ -85,8 +85,8 @@
 }
 
 .role-icon-wrapper {
-  width: 56px;
-  height: 56px;
+  width: var(--icon-size-lg, 56px);
+  height: var(--icon-size-lg, 56px);
   border-radius: var(--radius-lg, 0.75rem);
   display: flex;
   align-items: center;
@@ -102,8 +102,8 @@
 
 .role-icon-wrapper svg {
   color: white;
-  width: 24px;
-  height: 24px;
+  width: var(--icon-svg-md, 24px);
+  height: var(--icon-svg-md, 24px);
 }
 
 .role-title {
@@ -277,5 +277,81 @@
 
   .expectations-title {
     font-size: var(--font-size-xl, 1.25rem);
+  }
+}
+
+/* ========================================
+   Presentation Mode - 6-7m Viewing Distance
+   ======================================== */
+
+@media (min-width: 1920px) {
+  .team-function-content {
+    padding: 1.5rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .team-function-content .slide-title {
+    font-size: var(--font-size-5xl);       /* 112px */
+  }
+
+  .team-function-content .slide-subtitle {
+    font-size: var(--font-size-xl);        /* 44px */
+  }
+
+  .role-title {
+    font-size: var(--font-size-xl);        /* 44px */
+  }
+
+  .role-description {
+    font-size: var(--font-size-base);      /* 32px */
+  }
+
+  .role-card {
+    padding: var(--spacing-4);
+  }
+
+  .role-icon-wrapper {
+    width: var(--icon-size-xl);
+    height: var(--icon-size-xl);
+    margin-bottom: var(--spacing-3);
+  }
+
+  .role-icon-wrapper svg {
+    width: var(--icon-svg-lg);
+    height: var(--icon-svg-lg);
+  }
+
+  .roles-grid {
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .expectations-title {
+    font-size: var(--font-size-3xl);       /* 72px */
+  }
+
+  .expectations-subtitle {
+    font-size: var(--font-size-lg);        /* 36px */
+  }
+
+  .col-label {
+    font-size: var(--font-size-sm);        /* 28px */
+  }
+
+  .col-value {
+    font-size: var(--font-size-base);      /* 32px */
+  }
+
+  .expectations-card {
+    padding: var(--spacing-4);
+  }
+
+  .expectation-row {
+    padding: var(--spacing-3);
+    gap: var(--spacing-3);
+  }
+
+  .expectations-list {
+    gap: var(--spacing-3);
   }
 }

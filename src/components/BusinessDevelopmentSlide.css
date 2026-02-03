@@ -184,8 +184,8 @@
 .business-development-section-card .section-icon-wrapper {
   position: relative;
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: var(--icon-size-md, 48px);
+  height: var(--icon-size-md, 48px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,7 +195,7 @@
 }
 
 .business-development-section-card .section-icon {
-  font-size: 1.25rem;
+  font-size: var(--font-size-xl, 1.25rem);
   line-height: 1;
 }
 
@@ -224,7 +224,7 @@
   margin: 0;
   letter-spacing: -0.01em;
   flex: 1;
-  line-height: 1.4;
+  line-height: var(--line-height-tight, 1.3);
 }
 
 /* ========================================
@@ -243,9 +243,9 @@
 
 .business-development-section-card .section-content-item {
   font-size: var(--font-size-sm, 0.875rem);
-  line-height: 1.65;
+  line-height: var(--line-height-relaxed, 1.6);
   color: var(--text-secondary, #44403C);
-  padding-left: var(--spacing-5, 1.25rem);
+  padding-left: var(--spacing-4, 1rem);
   position: relative;
   letter-spacing: 0.01em;
 }
@@ -328,5 +328,54 @@
   .business-development-section-card {
     padding: var(--spacing-4, 1rem);
     min-height: auto;
+  }
+}
+
+/* ========================================
+   Presentation Mode - 6-7m Viewing Distance
+   ======================================== */
+
+@media (min-width: 1920px) {
+  .business-development-content {
+    padding: 0.75rem 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .business-development-section-card .section-title {
+    font-size: var(--font-size-xl);        /* 44px */
+  }
+
+  .business-development-section-card .section-content-item {
+    font-size: var(--font-size-base);      /* 32px */
+    line-height: 1.4;
+  }
+
+  .business-development-section-card .section-icon-wrapper {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+  }
+
+  .business-development-section-card .section-header {
+    margin-bottom: var(--spacing-3);
+    padding-bottom: var(--spacing-2);
+    gap: var(--spacing-3);
+  }
+
+  .business-development-section-card {
+    padding: var(--spacing-4);
+    min-height: auto;
+  }
+
+  .business-development-sections {
+    gap: var(--spacing-3);
+  }
+
+  .business-development-badge {
+    font-size: var(--font-size-sm);
+    padding: 0.625rem 1.25rem;
+  }
+
+  .business-development-section-card .section-content-list {
+    gap: var(--spacing-2);
   }
 }
